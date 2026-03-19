@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi niña favorita 💜</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* Degradado Lila Aesthetic */
+            background: linear-gradient(135deg, #e6e6fa 0%, #b2b2ff 100%);
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Tarjeta Estilo Cristal (Fresa) */
+        .card {
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 40px 30px;
+            width: 85%;
+            max-width: 350px;
+            text-align: center;
+            z-index: 10;
+            animation: fadeIn 1.5s ease;
+        }
+
+        h1 {
+            color: #1a237e; /* Azul Marino */
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #3f51b5; /* Azul índigo */
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        /* Botón Marino Pro con Pulso */
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 30px;
+            background-color: #1a237e;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(26, 35, 126, 0.4);
+            transition: 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Corazones flotando de fondo */
+        .heart-bg {
+            position: absolute;
+            color: rgba(186, 104, 200, 0.5); /* Lila */
+            font-size: 25px;
+            z-index: 1;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(110vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Para mi niña linda 💜</h1>
+        <p>Gracias por estar conmigo ayer, por las porras y por preocuparte por mi nariz jajaja. Eres la mejor del mundo.</p>
+        <p>Me encantan nuestras pláticas en la banca... Eres mi amuleto de suerte.</p>
+        
+        <a href="https://wa.me/+522881311796?text=SIII%20QUIERO%20SER%20TU%20NOVIA" class="btn">¿Quieres ser mi novia? ❤️</a>
+    </div>
+
+    <script>
+        // Generador de corazones lilas flotantes
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-bg');
+            heart.innerHTML = '💜';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.body.appendChild(heart);
+            // Se borran después de subir para no trabar el cel
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        // Crea un corazón cada 300 milisegundos
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>
